@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAlignBottom="false"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            >
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="addImageIcon"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="imageSelectorButton"
+            tools:srcCompat="@drawable/add_image"
+            />
+
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/art_name"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/artistEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="Art Name"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/artist"
+        android:inputType="text"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/yearEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/year"
+        android:inputType="text"
+        android:padding="10dp"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/radius_button"
+        android:onClick="saveArtButton"
+        android:text="Save Art" />
+</LinearLayout>
