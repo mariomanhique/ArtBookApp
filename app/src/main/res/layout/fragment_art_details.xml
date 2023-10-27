@@ -10,36 +10,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Icon (assume it's an ImageView with a drawable) positioned above -->
+
+
+        <!--         ImageView with rounded corners -->
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewer"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_gravity="center"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="0dp"
             android:baselineAlignBottom="false"
-            android:padding="10dp"
+            android:padding="0dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background"
-            >
+            android:src="@drawable/picture"
 
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="addImageIcon"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
-            android:onClick="imageSelectorButton"
-            tools:srcCompat="@drawable/add_image"
             />
 
-
+        <ImageView
+            android:id="@+id/addImageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="addImageIcon"
+            android:src="@drawable/add_image" />
     </FrameLayout>
+
 
     <EditText
         android:id="@+id/nameEditText"
@@ -66,8 +66,7 @@
         android:ems="10"
         android:hint="@string/artist"
         android:inputType="text"
-        android:padding="10dp"
-        />
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/yearEditText"
@@ -80,8 +79,7 @@
         android:ems="10"
         android:hint="@string/year"
         android:inputType="text"
-        android:padding="10dp"
-        />
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/button"
@@ -91,6 +89,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/radius_button"
+        android:backgroundTint="@color/button_color"
         android:onClick="saveArtButton"
-        android:text="Save Art" />
+        android:text="Save Art"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 </LinearLayout>
