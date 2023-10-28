@@ -2,6 +2,7 @@ package com.mariomanhique.artbookapp.view
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.mariomanhique.artbookapp.R
@@ -25,6 +26,15 @@ class ArtDetailsFragment: Fragment(R.layout.fragment_art_details) {
         binding.button.setOnClickListener  {
 
         }
+
+        val callBack = object : OnBackPressedCallback(enabled = true){
+            override fun handleOnBackPressed() {
+                findNavController().popBackStack()
+            }
+
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(callBack)
     }
 
 

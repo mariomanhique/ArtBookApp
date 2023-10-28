@@ -1,27 +1,31 @@
 package com.mariomanhique.artbookapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.mariomanhique.artbookapp.model.ArtBook
-import kotlinx.coroutines.flow.Flow
+import com.mariomanhique.artbookapp.model.Art
 
 @Dao
 interface ArtBookDao {
 
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertArt(art: Art)
     @Query("select * from artBook_table")
-    fun getAllArts():Flow<List<ArtBook>>
+    fun getAllArts():LiveData<List<Art>>
 
     @Query("select * from artBook_table where id =:artId")
-    fun getArtById(artId: Int):Flow<ArtBook>
+    fun getArtById(artId: Int):LiveData<Art>
 
     @Update
-    suspend fun updateArt(artBook: ArtBook)
+    suspend fun updateArt(art: Art)
 
     @Delete
-    suspend fun deleteArts(artBook: ArtBook)
+    suspend fun deleteArts(art: Art)
 
     @Query("delete from artBook_table where id =:artId")
     suspend fun deleteArtBookByID(artId:Int)

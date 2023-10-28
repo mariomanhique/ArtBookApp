@@ -2,14 +2,17 @@ package com.mariomanhique.artbookapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.mariomanhique.artbookapp.data.ArtBookDao
 import com.mariomanhique.artbookapp.data.ArtBookDatabase
-import com.mariomanhique.artbookapp.utils.Constants.ARTBOOK_DATABASE_NAME
+import com.mariomanhique.artbookapp.network.ImagesApi
+import com.mariomanhique.artbookapp.util.Constants.ARTBOOK_DATABASE_NAME
+import com.mariomanhique.artbookapp.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -18,7 +21,17 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideArtBookDao(artBookDatabase: ArtBookDatabase): ArtBookDao
+    fun provideArtApi(): ImagesApi {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ImagesApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideArtBookDao(artBookDatabase: ArtBookDatabase)
                 = artBookDatabase.artBookDao()
 
     @Singleton
