@@ -7,6 +7,10 @@ import javax.inject.Inject
 
 class ArtBookRepository @Inject constructor(private val artBookDatabase: ArtBookDao):
     ArtBookRepositoryInterface {
+    override suspend fun insertArt(art: Art) {
+        artBookDatabase.insertArt(art = art)
+    }
+
     override fun getAllArts(): LiveData<List<Art>> {
         return artBookDatabase.getAllArts()
     }
@@ -19,7 +23,7 @@ class ArtBookRepository @Inject constructor(private val artBookDatabase: ArtBook
         artBookDatabase.updateArt(art = art)
     }
 
-    override suspend fun deleteArts(art: Art) {
+    override suspend fun deleteArt(art: Art) {
         return artBookDatabase.deleteArts(art = art)
     }
 

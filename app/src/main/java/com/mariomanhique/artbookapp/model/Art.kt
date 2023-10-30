@@ -16,5 +16,5 @@ data class Art(
     @ColumnInfo(name = "artistName")
     val artistName:String,
     @ColumnInfo(name = "year")
-    val year:String
+    val year:Int
 )

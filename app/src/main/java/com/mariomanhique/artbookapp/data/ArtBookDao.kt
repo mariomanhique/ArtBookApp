@@ -15,6 +15,7 @@ interface ArtBookDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArt(art: Art)
+
     @Query("select * from artBook_table")
     fun getAllArts():LiveData<List<Art>>
 

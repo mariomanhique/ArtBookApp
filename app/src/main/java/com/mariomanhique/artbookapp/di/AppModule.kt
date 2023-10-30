@@ -2,7 +2,15 @@ package com.mariomanhique.artbookapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
+import com.bumptech.glide.request.RequestOptions
+import com.mariomanhique.artbookapp.R
 import com.mariomanhique.artbookapp.data.ArtBookDatabase
+import com.mariomanhique.artbookapp.data.repository.networkRepository.NetworkRepository
+import com.mariomanhique.artbookapp.data.repository.networkRepository.NetworkRepositoryInterface
+import com.mariomanhique.artbookapp.data.repository.roomRepository.ArtBookRepository
+import com.mariomanhique.artbookapp.data.repository.roomRepository.ArtBookRepositoryInterface
 import com.mariomanhique.artbookapp.network.ImagesApi
 import com.mariomanhique.artbookapp.util.Constants.ARTBOOK_DATABASE_NAME
 import com.mariomanhique.artbookapp.util.Constants.BASE_URL
@@ -34,6 +42,25 @@ object AppModule {
     fun provideArtBookDao(artBookDatabase: ArtBookDatabase)
                 = artBookDatabase.artBookDao()
 
+
+    @Singleton
+    @Provides
+    fun provideGlide(@ApplicationContext context: Context)
+                = Glide.with(context).setDefaultRequestOptions(
+                    RequestOptions().placeholder(R.drawable.picture)
+                        .error(R.drawable.picture)
+                )
+
+    @Singleton
+    @Provides
+    fun provideNetworkRepository(networkRepository: NetworkRepository):NetworkRepositoryInterface
+                = networkRepository
+
+    @Singleton
+    @Provides
+    fun provideArtRepository(artRepository: ArtBookRepository):ArtBookRepositoryInterface
+            = artRepository
+
     @Singleton
     @Provides
     fun provideRoomDatabase(@ApplicationContext context: Context): ArtBookDatabase{
@@ -43,4 +70,6 @@ object AppModule {
             name = ARTBOOK_DATABASE_NAME
         ).fallbackToDestructiveMigration().build()
     }
+
+
 }

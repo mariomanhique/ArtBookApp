@@ -8,4 +8,5 @@ interface NetworkRepositoryInterface {
     suspend fun searchImage(
         searchQuery: String,
     ): Resource<ImageResponse>
+
 }
