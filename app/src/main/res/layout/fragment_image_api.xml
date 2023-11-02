@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/searchText"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_margin="15dp"
@@ -26,6 +26,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="15dp"

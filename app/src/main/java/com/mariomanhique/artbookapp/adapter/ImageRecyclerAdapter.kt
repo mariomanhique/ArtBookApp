@@ -57,7 +57,7 @@ class ImageRecyclerAdapter @Inject constructor(
 
         holder.itemView.apply {
             glide.load(image).into(imageView)
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let {
                     it(image)
                 }

@@ -3,16 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp"
-    >
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/artRowImageView"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="100dp"
         android:adjustViewBounds="false"
-        android:scaleType="centerCrop"
-        android:src="@drawable/image_background"></ImageView>
+        android:padding="5dp"
+        android:scaleType="centerCrop"></ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,14 +24,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
+            android:padding="1dp"
             android:text="Art Name"
-            android:textSize="28sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/artRowArtistNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
+            android:padding="1dp"
             android:text="Artist Name"
             android:textSize="20sp" />
 
@@ -41,8 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
+            android:padding="1dp"
             android:text="Year"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
