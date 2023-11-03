@@ -5,8 +5,8 @@ import com.mariomanhique.artbookapp.data.ArtBookDao
 import com.mariomanhique.artbookapp.model.Art
 import javax.inject.Inject
 
-class ArtBookRepository @Inject constructor(private val artBookDatabase: ArtBookDao):
-    ArtBookRepositoryInterface {
+class ArtRepository @Inject constructor(private val artBookDatabase: ArtBookDao):
+    ArtRepositoryInterface {
     override suspend fun insertArt(art: Art) {
         artBookDatabase.insertArt(art = art)
     }

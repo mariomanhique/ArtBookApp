@@ -3,7 +3,7 @@ package com.mariomanhique.artbookapp.data.repository.roomRepository
 import androidx.lifecycle.LiveData
 import com.mariomanhique.artbookapp.model.Art
 
-interface ArtBookRepositoryInterface {
+interface ArtRepositoryInterface {
 
     suspend fun insertArt(art: Art)
 

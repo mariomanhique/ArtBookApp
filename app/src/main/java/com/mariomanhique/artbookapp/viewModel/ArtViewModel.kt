@@ -3,22 +3,16 @@ package com.mariomanhique.artbookapp.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
-import com.mariomanhique.artbookapp.data.repository.networkRepository.NetworkRepository
-import com.mariomanhique.artbookapp.data.repository.networkRepository.NetworkRepositoryInterface
-import com.mariomanhique.artbookapp.data.repository.roomRepository.ArtBookRepositoryInterface
+import com.mariomanhique.artbookapp.data.repository.roomRepository.ArtRepositoryInterface
 import com.mariomanhique.artbookapp.model.Art
-import com.mariomanhique.artbookapp.model.ImageResponse
 import com.mariomanhique.artbookapp.util.Resource
-import com.mariomanhique.artbookapp.util.Status
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.time.Year
 import javax.inject.Inject
 
 @HiltViewModel
-class ArtViewModel @Inject constructor(private val artRepository: ArtBookRepositoryInterface): ViewModel() {
+class ArtViewModel @Inject constructor(private val artRepository: ArtRepositoryInterface): ViewModel() {
 
     val artList = artRepository.getAllArts()
 
