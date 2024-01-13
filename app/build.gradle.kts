@@ -79,7 +79,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.13.2")
     //kapt 'com.github.bumptech.glide:compiler:4.13.2'
     ksp ("com.github.bumptech.glide:ksp:4.14.2")
-    implementation (platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+   /***** implementation (platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))*/
 
 
     // TestImplementations

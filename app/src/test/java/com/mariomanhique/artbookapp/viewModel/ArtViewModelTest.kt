@@ -20,7 +20,7 @@ class ArtViewModelTest {
     //It makes sure everything run in the main thread and in order
 //    H
     @get:Rule
-    var instantTaskExecutorRule = InstantTaskExecutorRule()
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     //It makes sure everything run as if we are in the main thread because we are not going to use the emulator.
     // Note that if we were in the androidTest, we wouldnt need this, because the test run in the main thread.

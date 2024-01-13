@@ -17,6 +17,7 @@ class ArtViewModel @Inject constructor(private val artRepository: ArtRepositoryI
     val artList = artRepository.getAllArts()
 
     private var  _insertArtMsg = MutableLiveData<Resource<Art>>()
+
     val insertArtMsg: LiveData<Resource<Art>>
         get() =_insertArtMsg
 
